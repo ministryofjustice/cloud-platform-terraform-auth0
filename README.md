@@ -10,7 +10,7 @@ module "auth0" {
 
   cluster_name         = local.cluster_name
   services_base_domain = local.services_base_domain
-}}
+}
 ```
 
 ## Inputs
