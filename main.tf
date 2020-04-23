@@ -44,6 +44,10 @@ resource "auth0_client" "components" {
       var.services_base_domain,
     ),
     format(
+      "https://grafana.%s/sky/issuer/callback",
+      var.services_base_domain,
+    ),
+    format(
       "https://kibana.%s/oauth2/callback",
       var.services_base_domain,
     ),
