@@ -44,7 +44,7 @@ resource "auth0_client" "components" {
       var.services_base_domain,
     ),
     format(
-      "https://grafana.%s/sky/issuer/callback",
+      "https://grafana.%s/login/generic_oauth",
       var.services_base_domain,
     ),
     format(
