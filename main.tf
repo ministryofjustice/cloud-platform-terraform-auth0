@@ -7,30 +7,16 @@
 # the AWS providr credentials are handled.
 #
 
-resource "auth0_client" "kubernetes" {
-  name        = "${var.cluster_name}:kubernetes"
-  description = "Cloud Platform kubernetes"
-  app_type    = "regular_web"
-
-  callbacks = [format("https://login.%s/ui", var.services_base_domain)]
-
-  custom_login_page_on = true
-  is_first_party       = true
-  oidc_conformant      = true
-  sso                  = true
-
-  jwt_configuration {
-    alg                 = "RS256"
-    lifetime_in_seconds = "2592000"
-  }
-}
-
 resource "auth0_client" "components" {
   name        = "${var.cluster_name}:components"
   description = "Cloud Platform components"
   app_type    = "regular_web"
 
   callbacks = [
+    format(
+      "https://login.%s/ui",
+      var.services_base_domain,
+    ),
     format(
       "https://prometheus.%s/oauth2/callback",
       var.services_base_domain,
