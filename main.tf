@@ -36,10 +36,6 @@ resource "auth0_client" "components" {
 
   callbacks = [
     format(
-      "https://login.%s/ui",
-      var.services_base_domain,
-    ),
-    format(
       "https://prometheus.%s/oauth2/callback",
       var.services_base_domain,
     ),
