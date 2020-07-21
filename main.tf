@@ -63,6 +63,10 @@ resource "auth0_client" "components" {
       "https://kube-ops.%s/login/authorized",
       var.services_base_domain,
     ),
+    format(
+      "https://sonarqube.%s/oauth2/callback/oidc",
+      var.services_base_domain,
+    ),
   ]
 
   custom_login_page_on = true
