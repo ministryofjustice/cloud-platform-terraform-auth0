@@ -10,6 +10,7 @@ module "auth0" {
 
   cluster_name         = local.cluster_name
   services_base_domain = local.services_base_domain
+  services_eks_domain  = local.services_eks_domain
 }
 ```
 
@@ -19,6 +20,7 @@ module "auth0" {
 |-----------------------|-----------------------------------------------|:------:|:-------:|:--------:|
 | cluster_name          | The VPC where bastion is going to be deployed | string |         | yes      |
 | services_base_domain  | The DNS hostzone used within the auth0's Applications for the callbacks URLs| string | | yes |
+| services_eks_domain   | The DNS hostzone used within the auth0's Applications for EKS callbacks URLs| string | | yes |
 
 ## Outputs
 
