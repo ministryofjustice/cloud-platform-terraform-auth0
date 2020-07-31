@@ -70,6 +70,10 @@ locals {
       var.services_base_domain,
     ),
     format(
+      "https://dsd-kibana.%s/oauth2/callback",
+      var.services_base_domain,
+    ),
+    format(
       "https://kube-ops.%s/login/authorized",
       var.services_base_domain,
     ),
