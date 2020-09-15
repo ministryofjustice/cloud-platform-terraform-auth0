@@ -54,6 +54,10 @@ locals {
       var.services_base_domain,
     ),
     format(
+      "https://prometheus-infra.%s/oauth2/callback",
+      var.services_base_domain,
+    ),
+    format(
       "https://alertmanager.%s/oauth2/callback",
       var.services_base_domain,
     ),
