@@ -34,21 +34,7 @@ resource "auth0_client" "components" {
   description = "Cloud Platform components"
   app_type    = "regular_web"
 
-  callbacks =   var.eks == true ? concat(local.callbacks_default , local.callbacks_eks) : local.callbacks_default
-
-  custom_login_page_on = true
-  is_first_party       = true
-  oidc_conformant      = true
-  sso                  = true
-
-  jwt_configuration {
-    alg                 = "RS256"
-    lifetime_in_seconds = "36000"
-  }
-}
-
-locals {
-  callbacks_default    = [
+  callbacks = concat([
     format(
       "https://prometheus.%s/oauth2/callback",
       var.services_base_domain,
@@ -81,15 +67,15 @@ locals {
       "https://kube-ops.%s/login/authorized",
       var.services_base_domain,
     ),
-  ]
-  callbacks_eks    = [
-    format(
-      "https://sonarqube.%s/oauth2/callback/oidc",
-      var.services_eks_domain,
-    ),
-    format(
-      "https://concourse.%s/sky/issuer/callback",
-      var.services_base_domain,
-    ),
-  ]
+  ], var.extra_callbacks)
+
+  custom_login_page_on = true
+  is_first_party       = true
+  oidc_conformant      = true
+  sso                  = true
+
+  jwt_configuration {
+    alg                 = "RS256"
+    lifetime_in_seconds = "36000"
+  }
 }
