@@ -14,19 +14,7 @@ module "auth0" {
 }
 ```
 
-## Inputs
+<!--- BEGIN_TF_DOCS --->
 
-|         Name          |                     Description               | Type   | Default | Required |
-|-----------------------|-----------------------------------------------|:------:|:-------:|:--------:|
-| cluster_name          | The VPC where bastion is going to be deployed | string |         | yes      |
-| services_base_domain  | The DNS hostzone used within the auth0's Applications for the callbacks URLs| string | | yes |
-| services_eks_domain   | The DNS hostzone used within the auth0's Applications for EKS callbacks URLs| string | | yes |
+<!--- END_TF_DOCS --->
 
-## Outputs
-
-|           Name                |          Description          |
-|-------------------------------|-------------------------------|
-| oidc_kubernetes_client_id     | Kubernetes OIDC Client ID     |
-| oidc_kubernetes_client_secret | Kubernetes OIDC Client Secret |
-| oidc_components_client_id     | Components OIDC Client ID     |
-| oidc_components_client_secret | Components OIDC Client Secret |
