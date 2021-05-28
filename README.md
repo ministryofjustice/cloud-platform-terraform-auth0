@@ -15,6 +15,44 @@ module "auth0" {
 ```
 
 <!--- BEGIN_TF_DOCS --->
+## Requirements
+
+| Name | Version |
+|------|---------|
+| terraform | >= 0.13 |
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| auth0 | n/a |
+
+## Modules
+
+No Modules.
+
+## Resources
+
+| Name |
+|------|
+| [auth0_client](https://registry.terraform.io/providers/alexkappa/auth0/latest/docs/resources/client) |
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| cluster\_name | Kubernetes cluster name - used to name (id) the auth0 resources | `any` | n/a | yes |
+| extra\_callbacks | Extra callbacks URLs that can be added to the auth0 application - e.g: concourse, sonarqube, etc | `list(any)` | `null` | no |
+| services\_base\_domain | Base domain to be used for the callbacks URLs | `any` | n/a | yes |
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| oidc\_components\_client\_id | Components OIDC Client ID |
+| oidc\_components\_client\_secret | Components OIDC Client Secret |
+| oidc\_kubernetes\_client\_id | Kubernetes OIDC Client ID |
+| oidc\_kubernetes\_client\_secret | Kubernetes OIDC Client Secret |
 
 <!--- END_TF_DOCS --->
 
