@@ -34,7 +34,7 @@ resource "auth0_client" "components" {
   description = "Cloud Platform components"
   app_type    = "regular_web"
 
-  callbacks = concat([
+  callbacks = compact(concat([
     format(
       "https://prometheus.%s/oauth2/callback",
       var.services_base_domain,
@@ -67,7 +67,7 @@ resource "auth0_client" "components" {
       "https://kube-ops.%s/login/authorized",
       var.services_base_domain,
     ),
-  ], var.extra_callbacks)
+  ], var.extra_callbacks))
 
   custom_login_page_on = true
   is_first_party       = true
