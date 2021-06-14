@@ -8,6 +8,6 @@ variable "services_base_domain" {
 
 variable "extra_callbacks" {
   description = "Extra callbacks URLs that can be added to the auth0 application - e.g: concourse, sonarqube, etc"
-  default     = null
+  default     = [""]
   type        = list(any)
 }

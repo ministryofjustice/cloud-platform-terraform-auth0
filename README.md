@@ -42,7 +42,7 @@ No Modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | cluster\_name | Kubernetes cluster name - used to name (id) the auth0 resources | `any` | n/a | yes |
-| extra\_callbacks | Extra callbacks URLs that can be added to the auth0 application - e.g: concourse, sonarqube, etc | `list(any)` | `null` | no |
+| extra\_callbacks | Extra callbacks URLs that can be added to the auth0 application - e.g: concourse, sonarqube, etc | `list(any)` | <pre>[<br>  ""<br>]</pre> | no |
 | services\_base\_domain | Base domain to be used for the callbacks URLs | `any` | n/a | yes |
 
 ## Outputs
