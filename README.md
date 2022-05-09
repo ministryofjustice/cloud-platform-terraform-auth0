@@ -56,3 +56,6 @@ No Modules.
 
 <!--- END_TF_DOCS --->
 
+## Note
+
+The "main" branch stores the releases for EKS, and the "last-kops-release-do-not-delete" serves as a kops cluster features branch, which was used for "live-1" cluster.
