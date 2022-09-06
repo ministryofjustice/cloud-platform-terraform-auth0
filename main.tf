@@ -48,6 +48,10 @@ resource "auth0_client" "components" {
       var.services_base_domain,
     ),
     format(
+      "https://thanos.%s/oauth2/callback",
+      var.services_base_domain,
+    ),
+    format(
       "https://grafana.%s/login/generic_oauth",
       var.services_base_domain,
     ),
