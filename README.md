@@ -62,7 +62,7 @@ No Modules.
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.2.5 |
 | <a name="requirement_auth0"></a> [auth0](#requirement\_auth0) | >=0.27.0 |
 
 ## Providers
