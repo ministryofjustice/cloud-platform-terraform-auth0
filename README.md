@@ -81,6 +81,8 @@ No modules.
 |------|------|
 | [auth0_client.components](https://registry.terraform.io/providers/auth0/auth0/latest/docs/resources/client) | resource |
 | [auth0_client.kubernetes](https://registry.terraform.io/providers/auth0/auth0/latest/docs/resources/client) | resource |
+| [auth0_client.components](https://registry.terraform.io/providers/auth0/auth0/latest/docs/data-sources/client) | data source |
+| [auth0_client.kubernetes](https://registry.terraform.io/providers/auth0/auth0/latest/docs/data-sources/client) | data source |
 
 ## Inputs
 
