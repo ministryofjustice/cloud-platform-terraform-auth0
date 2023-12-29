@@ -29,6 +29,11 @@ resource "auth0_client" "kubernetes" {
   }
 }
 
+# Get client secret for kubernetes
+data "auth0_client" "kubernetes" {
+  client_id = auth0_client.kubernetes.client_id
+}
+
 resource "auth0_client" "components" {
   name        = "${var.cluster_name}:components"
   description = "Cloud Platform components"
@@ -82,4 +87,9 @@ resource "auth0_client" "components" {
     alg                 = "RS256"
     lifetime_in_seconds = "36000"
   }
+}
+
+# Get client secret for components
+data "auth0_client" "components" {
+  client_id = auth0_client.components.client_id
 }
