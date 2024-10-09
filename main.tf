@@ -8,9 +8,10 @@
 #
 
 resource "auth0_client" "kubernetes" {
-  name        = "${var.cluster_name}:kubernetes"
-  description = "Cloud Platform kubernetes"
-  app_type    = "regular_web"
+  name              = "${var.cluster_name}:kubernetes"
+  description       = "Cloud Platform kubernetes"
+  app_type          = "regular_web"
+  cross_origin_auth = true
 
   callbacks = [
     format(
@@ -35,9 +36,10 @@ data "auth0_client" "kubernetes" {
 }
 
 resource "auth0_client" "components" {
-  name        = "${var.cluster_name}:components"
-  description = "Cloud Platform components"
-  app_type    = "regular_web"
+  name              = "${var.cluster_name}:components"
+  description       = "Cloud Platform components"
+  app_type          = "regular_web"
+  cross_origin_auth = true
 
   callbacks = compact(concat([
     format(
