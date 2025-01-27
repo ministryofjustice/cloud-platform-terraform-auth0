@@ -47,10 +47,6 @@ resource "auth0_client" "components" {
       var.services_base_domain,
     ),
     format(
-      "https://prometheus-infra.%s/oauth2/callback",
-      var.services_base_domain,
-    ),
-    format(
       "https://alertmanager.%s/oauth2/callback",
       var.services_base_domain,
     ),
@@ -60,22 +56,6 @@ resource "auth0_client" "components" {
     ),
     format(
       "https://grafana.%s/login/generic_oauth",
-      var.services_base_domain,
-    ),
-    format(
-      "https://kibana.%s/oauth2/callback",
-      var.services_base_domain,
-    ),
-    format(
-      "https://kibana-audit.%s/oauth2/callback",
-      var.services_base_domain,
-    ),
-    format(
-      "https://dsd-kibana.%s/oauth2/callback",
-      var.services_base_domain,
-    ),
-    format(
-      "https://kube-ops.%s/login/authorized",
       var.services_base_domain,
     ),
   ], var.extra_callbacks))
